@@ -1,0 +1,27 @@
+{
+  "name": "chat-node",
+  "version": "0.1.0",
+  "description": "Chat with NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solej77/chat-node.git"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server"
+  ],
+  "author": "Jose Luis Garcia Lopez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Solej77/chat-node/issues"
+  },
+  "homepage": "https://github.com/Solej77/chat-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
