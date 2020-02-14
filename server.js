@@ -1,9 +1,16 @@
 const express = require('express');
+const router = express.Router();
 
 const app = express();
 
-app.use('/', function(req, res) {
-  res.send('Hola Server');
+app.use(router);
+
+router.get('/message', function(req, res) {
+  res.send('Listar mensajes');
+});
+
+router.post('/message', function(req, res) {
+  res.send('Nuevo mensaje');
 });
 
 app.listen(3000);
