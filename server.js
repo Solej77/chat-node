@@ -31,5 +31,7 @@ router.delete('/message', function(req, res) {
   res.status(201).send({error: '', body:'Creado correctramente'});
 });
 
+app.use('/app', express.static('public'));
+
 app.listen(3000);
 console.log('Server in http://localhost:3000/');
