@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const mySchema = new Schema ({
   user: {
-    type: String,
-    default: true,
+    type: Schema.ObjectId,
+    ref: 'user',
   },
   message: {
     type: String,
@@ -16,6 +16,6 @@ const mySchema = new Schema ({
   },
 });
 
-const model = mongoose.model('trades', mySchema);
+const model = mongoose.model('message', mySchema);
 
 module.exports = model;
