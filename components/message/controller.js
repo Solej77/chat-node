@@ -23,7 +23,21 @@ function getMessages() {
   });
 }
 
+function updateMessage(id, message) {
+  console.log(message);
+  return new Promise(async (resolve, reject) => {
+    if (!id || !message) {
+      reject('Invalid data');
+      return false;
+    } else {
+      const result = await store.updateText(id, message);
+      resolve(result);
+    }
+  });
+}
+
 module.exports = {
   addMessage,
   getMessages,
+  updateMessage,
 }
