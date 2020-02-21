@@ -14,4 +14,15 @@ router.post('/', function(req, res) {
     })
 });
 
+router.get('/', function(req, res) {
+  const filterUser = req.query.id || null;
+  controller.getUser(filterUser)
+    .then((data) => {
+      response.success(req, res, data, 200);
+    })
+    .catch((err) => {
+      response.error(req, res, 'Internal Error', 500, err);
+    });
+});
+
 module.exports = router;
