@@ -6,14 +6,14 @@ function addMessage(message) {
   myMessage.save();
 }
 
-async function getMessage(filterUser) {
+async function getMessages(filterChat) {
   return new Promise((resolve, reject) => {
     let filter = {};
-    if (filterUser !== null) {
-      filter = { user: filterUser };
+    if (filterChat !== null) {
+      filter = { chat: filterChat };
     } 
 
-    const messages = Model.find(filter)
+    Model.find(filter)
       .populate('user')
       .exec((error, populated) => {
         if(error) {
@@ -44,7 +44,7 @@ function removeMessage(id) {
 
 module.exports = {
   add: addMessage,
-  list: getMessage,
+  list: getMessages,
   updateText: updateText,
   remove: removeMessage,
 }
