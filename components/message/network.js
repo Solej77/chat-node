@@ -1,12 +1,13 @@
 const express = require('express');
 const multer = require('multer')
 
+const { filesRoute } = require('../../config');
 const response = require('../../network/response');
 const controller = require('./controller');
 const router = express.Router();
 
 const upload = multer({
-  dest: 'public/files/',
+  dest: `public/${filesRoute}/`,
 });
 
 router.get('/', function(req, res) {
